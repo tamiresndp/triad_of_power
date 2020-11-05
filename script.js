@@ -36,3 +36,17 @@ function createDaysOfTheMonth() {
     }
 }
 createDaysOfTheMonth();
+
+// Requisito 2
+function createButtonFeriado(nome) {
+    const buttonContainer = document.querySelector('.buttons-container');
+    const button = document.createElement('button');
+
+
+    button.innerText = nome;
+    button.id = "btn-holiday";
+
+    buttonContainer.appendChild(button);
+
+}
+createButtonFeriado("Feriados");
