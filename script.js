@@ -109,3 +109,12 @@ function dayMouseOut() {
 }
 
 dayMouseOut();
+
+function addTaskSpan(taskName) {
+    const taskContainer = document.querySelector('.my-tasks');
+    const newTask = document.createElement('span');
+    newTask.innerText = taskName;
+    taskContainer.appendChild(newTask);
+}
+
+addTaskSpan('resolver os exercícios de 6 ao 10')
