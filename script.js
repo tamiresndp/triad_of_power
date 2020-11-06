@@ -129,3 +129,18 @@ function addTaskLegend(color) {
 
 addTaskLegend('green');
 
+function toggleTask() {
+    const task = document.querySelector('.task');
+
+    task.addEventListener('click', function (event) {
+        const taskSelected = document.querySelector('.selected');
+        if (taskSelected === null) {
+            event.target.className = "task selected";
+        } else {
+            event.target.className = "task";
+        }
+    });
+}
+
+toggleTask();
+
