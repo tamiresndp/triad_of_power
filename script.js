@@ -38,18 +38,17 @@ function createDaysOfTheMonth() {
 createDaysOfTheMonth();
 
 // Requisito 2
-function createButtonFeriado(nome) {
+function createButton(nome, id) {
     const buttonContainer = document.querySelector('.buttons-container');
     const button = document.createElement('button');
 
 
     button.innerText = nome;
-    button.id = "btn-holiday";
+    button.id = id;
 
     buttonContainer.appendChild(button);
-
 }
-createButtonFeriado("Feriados");
+createButton("Feriados", "btn-holiday");
 
 // Requisito 3
 function changeColorOfHolidays() {
@@ -68,3 +67,6 @@ function changeColorOfHolidays() {
     }
 }
 changeColorOfHolidays();
+
+// Requisito 4
+createButton("Sexta-feira", "btn-friday");
