@@ -50,3 +50,21 @@ function createButtonFeriado(nome) {
 
 }
 createButtonFeriado("Feriados");
+
+// Requisito 3
+function changeColorOfHolidays() {
+    const backgroundColor = "rgb(238,238,238)";
+    const button = document.querySelector('#btn-holiday');
+    const holidays = document.querySelectorAll('.holiday');
+    
+    button.addEventListener("click", changeColor);
+    function changeColor() {
+        for (let index = 0; index < holidays.length; index += 1) {
+            if (holidays[index].style.backgroundColor === "white")
+                holidays[index].style.backgroundColor = "green";
+            else
+                holidays[index].style.backgroundColor = "white";
+        }
+    }
+}
+changeColorOfHolidays();
