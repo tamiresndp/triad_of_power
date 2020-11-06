@@ -55,7 +55,7 @@ function changeColorOfHolidays() {
     const backgroundColor = "rgb(238,238,238)";
     const button = document.querySelector('#btn-holiday');
     const holidays = document.querySelectorAll('.holiday');
-    
+
     button.addEventListener("click", changeColor);
     function changeColor() {
         for (let index = 0; index < holidays.length; index += 1) {
@@ -84,8 +84,28 @@ function clickFriday() {
             if (friday.innerText === "SEXTOU!")
                 friday.innerText = (Number(friday.previousElementSibling.innerText) + 1);
             else
-                fridays[index].innerText = "SEXTOU!"; 
+                fridays[index].innerText = "SEXTOU!";
         }
     }
 }
 clickFriday();
+
+const days = document.querySelector('#days');
+
+function dayMouseOver() {
+    days.addEventListener('mouseover', function (event) {
+        event.target.style.fontSize = "28px";
+        event.target.style.fontWeight = "bold";
+    });
+}
+
+dayMouseOver();
+
+function dayMouseOut() {
+    days.addEventListener('mouseout', function (event) {
+        event.target.style.fontSize = "20px";
+        event.target.style.fontWeight = "normal";
+    });
+}
+
+dayMouseOut();
