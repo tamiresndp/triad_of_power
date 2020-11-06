@@ -70,3 +70,22 @@ changeColorOfHolidays();
 
 // Requisito 4
 createButton("Sexta-feira", "btn-friday");
+
+// Requisito 5
+function clickFriday() {
+    const buttonFriday = document.getElementById('btn-friday');
+    const fridays = document.querySelectorAll('.friday');
+
+
+    buttonFriday.addEventListener("click", changeTextFridays);
+    function changeTextFridays() {
+        for (let index = 0; index < fridays.length; index += 1) {
+            friday = fridays[index];
+            if (friday.innerText === "SEXTOU!")
+                friday.innerText = (Number(friday.previousElementSibling.innerText) + 1);
+            else
+                fridays[index].innerText = "SEXTOU!"; 
+        }
+    }
+}
+clickFriday();
