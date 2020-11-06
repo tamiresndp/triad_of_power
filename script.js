@@ -144,3 +144,18 @@ function toggleTask() {
 
 toggleTask();
 
+function toggleDayColor() {
+    days.addEventListener('click', function (event) {
+        const taskSelected = document.querySelector('.selected');
+        if (taskSelected != null) {
+            if (event.target.style.color === taskSelected.style.backgroundColor) {
+                event.target.style.color = "rgb(119,119,119)";
+            } else {
+                event.target.style.color = taskSelected.style.backgroundColor;
+            }
+        }
+    });
+}
+
+toggleDayColor();
+
