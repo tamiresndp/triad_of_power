@@ -55,7 +55,7 @@ function changeColorOfHolidays() {
     const backgroundColor = "rgb(238,238,238)";
     const button = document.querySelector('#btn-holiday');
     const holidays = document.querySelectorAll('.holiday');
-    
+
     button.addEventListener("click", changeColor);
     function changeColor() {
         for (let index = 0; index < holidays.length; index += 1) {
@@ -84,8 +84,78 @@ function clickFriday() {
             if (friday.innerText === "SEXTOU!")
                 friday.innerText = (Number(friday.previousElementSibling.innerText) + 1);
             else
-                fridays[index].innerText = "SEXTOU!"; 
+                fridays[index].innerText = "SEXTOU!";
         }
     }
 }
 clickFriday();
+
+const days = document.querySelector('#days');
+
+function dayMouseOver() {
+    days.addEventListener('mouseover', function (event) {
+        event.target.style.fontSize = "28px";
+        event.target.style.fontWeight = "bold";
+    });
+}
+
+dayMouseOver();
+
+function dayMouseOut() {
+    days.addEventListener('mouseout', function (event) {
+        event.target.style.fontSize = "20px";
+        event.target.style.fontWeight = "normal";
+    });
+}
+
+dayMouseOut();
+
+const taskContainer = document.querySelector('.my-tasks');
+
+function addTaskSpan(taskName) {
+    const newTask = document.createElement('span');
+    newTask.innerText = taskName;
+    taskContainer.appendChild(newTask);
+}
+
+addTaskSpan('resolver os exercícios de 6 ao 10');
+
+function addTaskLegend(color) {
+    const divLegend = document.createElement('div');
+    divLegend.className = "task";
+    divLegend.style.backgroundColor = color;
+    taskContainer.appendChild(divLegend);
+}
+
+addTaskLegend('green');
+
+function toggleTask() {
+    const task = document.querySelector('.task');
+
+    task.addEventListener('click', function (event) {
+        const taskSelected = document.querySelector('.selected');
+        if (taskSelected === null) {
+            event.target.className = "task selected";
+        } else {
+            event.target.className = "task";
+        }
+    });
+}
+
+toggleTask();
+
+function toggleDayColor() {
+    days.addEventListener('click', function (event) {
+        const taskSelected = document.querySelector('.selected');
+        if (taskSelected != null) {
+            if (event.target.style.color === taskSelected.style.backgroundColor) {
+                event.target.style.color = "rgb(119,119,119)";
+            } else {
+                event.target.style.color = taskSelected.style.backgroundColor;
+            }
+        }
+    });
+}
+
+toggleDayColor();
+
